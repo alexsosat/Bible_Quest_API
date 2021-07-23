@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users",
+  "info": {
+    "name": "users",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "uid",
+      "required": true,
+      "minLength": 5,
+      "maxLength": 15
+    },
+    "password": {
+      "type": "password",
+      "required": true,
+      "minLength": 5,
+      "maxLength": 15,
+      "private": true
+    },
+    "biography": {
+      "type": "text",
+      "maxLength": 50
+    },
+    "level": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "streak": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "currency": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
+    },
+    "health": {
+      "type": "json",
+      "required": true
+    },
+    "experience": {
+      "type": "json",
+      "required": true
+    },
+    "books_readed": {
+      "type": "json",
+      "required": false
+    },
+    "items": {
+      "via": "users",
+      "collection": "items"
+    }
+  }
+}

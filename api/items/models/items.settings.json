@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "items",
+  "info": {
+    "name": "Items",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "asset_name": {
+      "type": "uid",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 70,
+      "minLength": 10
+    },
+    "cost": {
+      "type": "decimal",
+      "required": true
+    },
+    "effects": {
+      "type": "json"
+    },
+    "users": {
+      "private": true,
+      "via": "items",
+      "collection": "users",
+      "dominant": true
+    },
+    "display_name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "head",
+        "arms",
+        "body",
+        "background",
+        "pet"
+      ],
+      "required": true
+    }
+  }
+}
