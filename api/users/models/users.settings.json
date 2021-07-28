@@ -59,6 +59,9 @@
     "items": {
       "via": "users",
       "collection": "items"
+    },
+    "current_items": {
+      "type": "json"
     }
   }
 }
