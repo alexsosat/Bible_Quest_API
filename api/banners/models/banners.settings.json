@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banners",
+  "info": {
+    "name": "Banners",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "items": {
+      "collection": "items"
+    },
+    "cost": {
+      "type": "decimal"
+    }
+  }
+}

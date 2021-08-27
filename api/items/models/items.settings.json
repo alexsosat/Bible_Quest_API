@@ -22,16 +22,12 @@
       "maxLength": 70,
       "minLength": 10
     },
-    "cost": {
-      "type": "decimal",
-      "required": true
-    },
     "effects": {
       "type": "json"
     },
     "users": {
-      "via": "items",
       "private": true,
+      "via": "items",
       "collection": "users",
       "dominant": true
     },
@@ -43,12 +39,20 @@
       "type": "enumeration",
       "enum": [
         "head",
-        "arms",
+        "arm",
         "body",
         "background",
-        "pet"
+        "pet",
+        "base"
       ],
       "required": true
+    },
+    "appearRate": {
+      "type": "decimal",
+      "required": true,
+      "default": 0,
+      "max": 1,
+      "min": 0
     }
   }
 }
