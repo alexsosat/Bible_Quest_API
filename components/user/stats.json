@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_stats_stats",
+  "info": {
+    "name": "Complex_stats",
+    "icon": "heart",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "total": {
+      "type": "integer",
+      "required": true
+    },
+    "current": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

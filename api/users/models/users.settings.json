@@ -18,39 +18,9 @@
       "minLength": 5,
       "maxLength": 15
     },
-    "password": {
-      "type": "password",
-      "required": true,
-      "minLength": 5,
-      "maxLength": 15,
-      "private": true
-    },
     "biography": {
       "type": "text",
       "maxLength": 50
-    },
-    "level": {
-      "type": "integer",
-      "required": true,
-      "default": 1
-    },
-    "streak": {
-      "type": "integer",
-      "required": true,
-      "default": 0
-    },
-    "currency": {
-      "type": "decimal",
-      "required": true,
-      "default": 0
-    },
-    "health": {
-      "type": "json",
-      "required": true
-    },
-    "experience": {
-      "type": "json",
-      "required": true
     },
     "books_readed": {
       "type": "json",
@@ -61,7 +31,15 @@
       "collection": "items"
     },
     "current_items": {
-      "type": "json"
+      "type": "component",
+      "repeatable": false,
+      "component": "user.current-items"
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "user.stats-section"
     }
   }
 }
