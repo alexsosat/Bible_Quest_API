@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tests",
+  "info": {
+    "name": "Test",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "identifier": {
+      "type": "uid"
+    },
+    "Health": {
+      "type": "component",
+      "repeatable": false,
+      "component": "user.stats"
+    }
+  }
+}

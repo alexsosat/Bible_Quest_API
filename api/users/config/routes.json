@@ -25,6 +25,46 @@
       }
     },
     {
+      "method": "GET",
+      "path": "/users/:id/stats",
+      "handler": "users.stats",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/users/:id/info",
+      "handler": "users.info",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/users/:id/books_readed",
+      "handler": "users.readed",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/users/:id/items/:type",
+      "handler": "users.itemsType",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/users/:id/items",
+      "handler": "users.items",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "POST",
       "path": "/users",
       "handler": "users.create",

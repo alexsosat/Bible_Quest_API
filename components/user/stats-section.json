@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_user_stats_sections",
+  "info": {
+    "name": "stats_section",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "level": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "streak": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "currency": {
+      "type": "decimal",
+      "default": 0,
+      "required": true
+    },
+    "health": {
+      "type": "component",
+      "repeatable": false,
+      "component": "user.stats",
+      "required": true
+    },
+    "experience": {
+      "type": "component",
+      "repeatable": false,
+      "component": "user.stats",
+      "required": true
+    }
+  }
+}
