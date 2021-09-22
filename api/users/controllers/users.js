@@ -15,12 +15,22 @@
 */
 
 module.exports = {
-    stats: async ctx => {
-        const id = ctx.params.id;
+    findKey: async ctx => {
+        const key = ctx.params.key;
         const result = await strapi
             .query('Users')
             .model.query(qb => {
-                qb.where('id', id);
+                qb.where('key', key);
+            }).fetch()
+
+        ctx.send(result);
+    },
+    stats: async ctx => {
+        const key = ctx.params.key;
+        const result = await strapi
+            .query('Users')
+            .model.query(qb => {
+                qb.where('key', key);
             }).fetch()
         const fields = result.toJSON();
 
@@ -28,35 +38,35 @@ module.exports = {
     },
 
     info: async ctx => {
-        const id = ctx.params.id;
+        const key = ctx.params.key;
         const result = await strapi
             .query('Users')
             .model.query(qb => {
-                qb.where('id', id);
+                qb.where('key', key);
             }).fetch()
         const fields = result.toJSON();
 
-        ctx.send(
-            `{"username":"${fields["username"]}","biography":"${fields["biography"]}","current_items":${JSON.stringify(fields["current_items"])}}`
-        );
+        const plainText = `{"username":"${fields["username"]}","current_items":${JSON.stringify(fields["current_items"])}}`
+
+        ctx.send(JSON.parse(plainText));
     },
     readed: async ctx => {
-        const id = ctx.params.id;
+        const key = ctx.params.key;
         const result = await strapi
             .query('Users')
             .model.query(qb => {
-                qb.where('id', id);
+                qb.where('key', key);
             }).fetch({ columns: ['books_readed'] }) // here we wait for one column only
         ctx.send(result);
     },
     itemsType: async ctx => {
-        const id = ctx.params.id;
+        const key = ctx.params.key;
         const type = ctx.params.type;
 
         const result = await strapi
             .query('Users')
             .model.query(qb => {
-                qb.where('id', id);
+                qb.where('key', key);
             }).fetch()
         const fields = result.toJSON();
 
@@ -67,13 +77,13 @@ module.exports = {
         ctx.send(items);
     },
     items: async ctx => {
-        const id = ctx.params.id;
+        const key = ctx.params.key;
         const type = ctx.params.type;
 
         const result = await strapi
             .query('Users')
             .model.query(qb => {
-                qb.where('id', id);
+                qb.where('key', key);
             }).fetch()
         const fields = result.toJSON();
 

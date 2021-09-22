@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_internationalization_language_fields",
+  "info": {
+    "name": "language_fields",
+    "icon": "comment"
+  },
+  "options": {},
+  "attributes": {
+    "es": {
+      "type": "string",
+      "required": true
+    },
+    "en": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

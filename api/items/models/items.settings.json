@@ -16,12 +16,6 @@
       "type": "uid",
       "required": true
     },
-    "description": {
-      "type": "text",
-      "required": true,
-      "maxLength": 70,
-      "minLength": 10
-    },
     "effects": {
       "type": "json"
     },
@@ -30,10 +24,6 @@
       "private": true,
       "collection": "users",
       "dominant": true
-    },
-    "display_name": {
-      "type": "string",
-      "required": true
     },
     "type": {
       "type": "enumeration",
@@ -53,6 +43,18 @@
       "default": 0,
       "max": 1,
       "min": 0
+    },
+    "display_name": {
+      "type": "component",
+      "repeatable": false,
+      "component": "internationalization.language-fields",
+      "required": true
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "internationalization.language-fields",
+      "required": true
     }
   }
 }

@@ -26,7 +26,15 @@
     },
     {
       "method": "GET",
-      "path": "/users/:id/stats",
+      "path": "/users/:key/all",
+      "handler": "users.findKey",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/users/:key/stats",
       "handler": "users.stats",
       "config": {
         "policies": []
@@ -34,7 +42,7 @@
     },
     {
       "method": "GET",
-      "path": "/users/:id/info",
+      "path": "/users/:key/info",
       "handler": "users.info",
       "config": {
         "policies": []
@@ -42,7 +50,7 @@
     },
     {
       "method": "GET",
-      "path": "/users/:id/books_readed",
+      "path": "/users/:key/books_readed",
       "handler": "users.readed",
       "config": {
         "policies": []
@@ -50,7 +58,7 @@
     },
     {
       "method": "GET",
-      "path": "/users/:id/items/:type",
+      "path": "/users/:key/items/:type",
       "handler": "users.itemsType",
       "config": {
         "policies": []
@@ -58,7 +66,7 @@
     },
     {
       "method": "GET",
-      "path": "/users/:id/items",
+      "path": "/users/:key/items",
       "handler": "users.items",
       "config": {
         "policies": []

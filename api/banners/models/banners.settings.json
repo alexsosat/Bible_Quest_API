@@ -12,14 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "description": {
-      "type": "text",
-      "required": true
-    },
     "startDate": {
       "type": "date",
       "required": true
@@ -32,6 +24,18 @@
     },
     "cost": {
       "type": "decimal"
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "internationalization.language-fields",
+      "required": true
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "internationalization.language-fields"
     }
   }
 }

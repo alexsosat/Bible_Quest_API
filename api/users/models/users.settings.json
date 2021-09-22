@@ -12,15 +12,9 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "username": {
+    "key": {
       "type": "uid",
-      "required": true,
-      "minLength": 5,
-      "maxLength": 15
-    },
-    "biography": {
-      "type": "text",
-      "maxLength": 50
+      "required": true
     },
     "books_readed": {
       "type": "json",
@@ -33,13 +27,18 @@
     "current_items": {
       "type": "component",
       "repeatable": false,
-      "component": "user.current-items"
+      "component": "user.current-items",
+      "required": true
     },
     "stats": {
       "type": "component",
       "repeatable": false,
       "required": true,
       "component": "user.stats-section"
+    },
+    "username": {
+      "type": "string",
+      "required": true
     }
   }
 }
