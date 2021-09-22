@@ -16,10 +16,6 @@
       "type": "uid",
       "required": true
     },
-    "books_readed": {
-      "type": "json",
-      "required": false
-    },
     "items": {
       "via": "users",
       "collection": "items"
@@ -39,6 +35,11 @@
     "username": {
       "type": "string",
       "required": true
+    },
+    "current_readings": {
+      "type": "component",
+      "repeatable": true,
+      "component": "lectures.plans"
     }
   }
 }

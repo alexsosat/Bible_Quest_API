@@ -12,11 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "startDate": {
+    "start_date": {
       "type": "date",
       "required": true
     },
-    "endDate": {
+    "end_date": {
       "type": "date"
     },
     "items": {

@@ -56,8 +56,11 @@ module.exports = {
             .query('Users')
             .model.query(qb => {
                 qb.where('key', key);
-            }).fetch({ columns: ['books_readed'] }) // here we wait for one column only
-        ctx.send(result);
+            }).fetch() // here we wait for one column only
+
+        const fields = result.toJSON();
+
+        ctx.send(fields['current_readings']);
     },
     itemsType: async ctx => {
         const key = ctx.params.key;

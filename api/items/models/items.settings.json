@@ -20,8 +20,8 @@
       "type": "json"
     },
     "users": {
-      "via": "items",
       "private": true,
+      "via": "items",
       "collection": "users",
       "dominant": true
     },
@@ -37,7 +37,7 @@
       ],
       "required": true
     },
-    "appearRate": {
+    "appear_rate": {
       "type": "decimal",
       "required": true,
       "default": 0,
