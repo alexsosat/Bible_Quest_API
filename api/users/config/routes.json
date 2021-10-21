@@ -18,6 +18,14 @@
     },
     {
       "method": "GET",
+      "path": "/users/:key/exists",
+      "handler": "users.exists",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/users/:id",
       "handler": "users.findOne",
       "config": {

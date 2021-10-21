@@ -15,6 +15,21 @@
 */
 
 module.exports = {
+    exists: async ctx => {
+        const key = ctx.params.key;
+        const result = await strapi
+            .query('Users')
+            .model.query(qb => {
+                qb.where('key', key);
+            }).fetch()
+
+        if (result != null) {
+            ctx.send(true);
+        }
+        else {
+            ctx.send(false);
+        }
+    },
     findKey: async ctx => {
         const key = ctx.params.key;
         const result = await strapi
