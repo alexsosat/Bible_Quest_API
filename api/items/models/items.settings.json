@@ -20,8 +20,8 @@
       "type": "json"
     },
     "users": {
-      "private": true,
       "via": "items",
+      "private": true,
       "collection": "users",
       "dominant": true
     },
