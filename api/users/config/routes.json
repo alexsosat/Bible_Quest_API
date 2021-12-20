@@ -97,6 +97,14 @@
       }
     },
     {
+      "method": "PUT",
+      "path": "/users/:key/stats/update",
+      "handler": "users.updateStats",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "DELETE",
       "path": "/users/:id",
       "handler": "users.delete",

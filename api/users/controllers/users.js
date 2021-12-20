@@ -61,7 +61,7 @@ module.exports = {
             }).fetch()
         const fields = result.toJSON();
 
-        const plainText = `{"username":"${fields["username"]}","current_items":${JSON.stringify(fields["current_items"])}}`
+        const plainText = `{"id":"${fields["id"]}","username":"${fields["username"]}","current_items":${JSON.stringify(fields["current_items"])}}`
 
         ctx.send(JSON.parse(plainText));
     },
@@ -106,5 +106,29 @@ module.exports = {
         const fields = result.toJSON();
 
         ctx.send(fields['items']);
-    }
+    },
+    updateStats: async ctx => {
+        const key = ctx.params.key;
+        const model = await strapi
+            .query('Users')
+            .model.query(qb => {
+                qb.where('key', key);
+            }).fetch()
+        let fields = model.toJSON();
+
+
+
+        let entity;
+        const data = ctx.request.body;
+
+        fields["stats"] = data;
+
+
+        ctx.send(fields);
+        entity = await strapi.services.users.update({ user: model.id }, fields);
+
+
+        return sanitizeEntity(entity, { model: strapi.models.users });
+    },
 }
+

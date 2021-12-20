@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "users",
   "info": {
-    "name": "users",
+    "name": "players",
     "description": ""
   },
   "options": {
