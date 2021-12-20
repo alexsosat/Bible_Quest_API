@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "users",
+  "collectionName": "players",
   "info": {
-    "name": "users",
-    "description": ""
+    "name": "players"
   },
   "options": {
     "increments": true,
@@ -17,8 +16,9 @@
       "required": true
     },
     "items": {
-      "via": "users",
-      "collection": "items"
+      "collection": "items",
+      "via": "players",
+      "dominant": true
     },
     "current_items": {
       "type": "component",
@@ -29,8 +29,8 @@
     "stats": {
       "type": "component",
       "repeatable": false,
-      "required": true,
-      "component": "user.stats-section"
+      "component": "user.stats-section",
+      "required": true
     },
     "username": {
       "type": "string",

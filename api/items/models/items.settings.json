@@ -55,6 +55,10 @@
       "repeatable": false,
       "component": "internationalization.language-fields",
       "required": true
+    },
+    "players": {
+      "via": "items",
+      "collection": "players"
     }
   }
 }
