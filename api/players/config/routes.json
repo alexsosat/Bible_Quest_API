@@ -1,0 +1,148 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/players",
+      "handler": "players.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/players/count",
+      "handler": "players.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/players/:id",
+      "handler": "players.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/players/:key/exists",
+      "handler": "players.exists",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/players/:key/all",
+      "handler": "players.findKey",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/players/:key/stats",
+      "handler": "players.stats",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/players/:key/info",
+      "handler": "players.info",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/players/:key/books_readed",
+      "handler": "players.readed",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/players/:key/items/:type",
+      "handler": "players.itemsType",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/players/:key/items",
+      "handler": "players.items",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/players",
+      "handler": "players.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/players/:id",
+      "handler": "players.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/players/:key/stats/update",
+      "handler": "players.updateStats",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/players/:key/info/name/update",
+      "handler": "players.updateUsername",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/players/:key/info/current_items/update",
+      "handler": "players.updateCurrentItems",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "Put",
+      "path": "/players/:key/books_readed/update",
+      "handler": "players.updateReaded",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "Put",
+      "path": "/players/:key/items/update",
+      "handler": "players.updateItems",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/players/:id",
+      "handler": "players.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -19,12 +19,6 @@
     "effects": {
       "type": "json"
     },
-    "users": {
-      "via": "items",
-      "private": true,
-      "collection": "users",
-      "dominant": true
-    },
     "type": {
       "type": "enumeration",
       "enum": [
@@ -55,6 +49,10 @@
       "repeatable": false,
       "component": "internationalization.language-fields",
       "required": true
+    },
+    "players": {
+      "via": "items",
+      "collection": "players"
     }
   }
 }
