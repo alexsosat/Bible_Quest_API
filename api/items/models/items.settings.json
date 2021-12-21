@@ -19,12 +19,6 @@
     "effects": {
       "type": "json"
     },
-    "users": {
-      "via": "items",
-      "private": true,
-      "collection": "users",
-      "dominant": true
-    },
     "type": {
       "type": "enumeration",
       "enum": [

@@ -7,6 +7,17 @@ const { parseMultipartData, sanitizeEntity } = require('strapi-utils');
  * to customize this controller
  */
 
+
+/*
+ const id = ctx.params.id;
+        const result = await strapi
+            .query('Users')
+            .model.query(qb => {
+                qb.where('id', id);
+            }).fetch({ columns: ['username', 'biography'] }) // here we wait for one column only
+        ctx.send(result);
+*/
+
 module.exports = {
     exists: async ctx => {
         const key = ctx.params.key;
@@ -117,8 +128,94 @@ module.exports = {
 
         fields["stats"] = data;
 
+        entity = await strapi.services.players.update({ id }, fields);
 
-        ctx.send(fields);
+
+        return sanitizeEntity(entity, { model: strapi.models.players });
+    },
+    updateUsername: async ctx => {
+        const key = ctx.params.key;
+        const model = await strapi
+            .query('Players')
+            .model.query(qb => {
+                qb.where('key', key);
+            }).fetch()
+        let fields = model.toJSON();
+        const id = fields["id"];
+
+        let entity;
+        const data = ctx.request.body;
+
+        fields["username"] = data["username"];
+
+
+        // ctx.send(fields);
+        entity = await strapi.services.players.update({ id }, fields);
+
+
+        return sanitizeEntity(entity, { model: strapi.models.players });
+    },
+    updateCurrentItems: async ctx => {
+        const key = ctx.params.key;
+        const model = await strapi
+            .query('Players')
+            .model.query(qb => {
+                qb.where('key', key);
+            }).fetch()
+        let fields = model.toJSON();
+        const id = fields["id"];
+
+        let entity;
+        const data = ctx.request.body;
+
+        fields["current_items"] = data["current_items"];
+
+
+        // ctx.send(fields);
+        entity = await strapi.services.players.update({ id }, fields);
+
+
+        return sanitizeEntity(entity, { model: strapi.models.players });
+    },
+    updateReaded: async ctx => {
+        const key = ctx.params.key;
+        const model = await strapi
+            .query('Players')
+            .model.query(qb => {
+                qb.where('key', key);
+            }).fetch()
+        let fields = model.toJSON();
+        const id = fields["id"];
+
+        let entity;
+        const data = ctx.request.body;
+
+        fields["current_readings"] = data["current_readings"];
+
+
+        // ctx.send(fields);
+        entity = await strapi.services.players.update({ id }, fields);
+
+
+        return sanitizeEntity(entity, { model: strapi.models.players });
+    },
+    updateItems: async ctx => {
+        const key = ctx.params.key;
+        const model = await strapi
+            .query('Players')
+            .model.query(qb => {
+                qb.where('key', key);
+            }).fetch()
+        let fields = model.toJSON();
+        const id = fields["id"];
+
+        let entity;
+        const data = ctx.request.body;
+
+        fields["items"] = data;
+
+
+        // ctx.send(fields);
         entity = await strapi.services.players.update({ id }, fields);
 
 

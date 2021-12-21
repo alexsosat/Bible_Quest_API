@@ -105,6 +105,38 @@
       }
     },
     {
+      "method": "PUT",
+      "path": "/players/:key/info/name/update",
+      "handler": "players.updateUsername",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/players/:key/info/current_items/update",
+      "handler": "players.updateCurrentItems",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "Put",
+      "path": "/players/:key/books_readed/update",
+      "handler": "players.updateReaded",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "Put",
+      "path": "/players/:key/items/update",
+      "handler": "players.updateItems",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "DELETE",
       "path": "/players/:id",
       "handler": "players.delete",
