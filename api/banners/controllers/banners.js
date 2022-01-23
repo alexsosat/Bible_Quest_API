@@ -26,7 +26,6 @@ module.exports = {
             delete banner.published_at;
             delete banner.created_at;
             delete banner.updated_at;
-            delete banner.cost;
             delete banner.description;
 
             return banner;

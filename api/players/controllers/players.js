@@ -190,7 +190,7 @@ module.exports = {
         let entity;
         const data = ctx.request.body;
 
-        fields["current_readings"] = data["current_readings"];
+        fields["current_readings"] = data;
 
 
         // ctx.send(fields);
